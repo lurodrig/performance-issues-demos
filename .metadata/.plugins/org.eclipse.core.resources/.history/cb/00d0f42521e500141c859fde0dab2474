@@ -1,0 +1,36 @@
+package lurodrig.performance.examples.memory;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import lurodrig.performance.utils.Commons;
+
+/**
+ * Servlet implementation class PermgenSpace
+ */
+@WebServlet("/PermgenSpace")
+public class PermgenSpace extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		for (int i = 0; i < 100_000_000; i++) {
+			try {
+				Commons.generate("eu.plumbr.demo.Generated" + i);
+			} catch (Exception e) {
+				e.printStackTrace();
+				throw new RuntimeException(e);
+			}
+		}
+	}
+
+}

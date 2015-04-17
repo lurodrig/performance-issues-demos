@@ -1,0 +1,3 @@
+INDEX VERSION 1.3+/home/lurodrig/development/workspaces/performance-issues/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1091840684.index
+3161289063.index

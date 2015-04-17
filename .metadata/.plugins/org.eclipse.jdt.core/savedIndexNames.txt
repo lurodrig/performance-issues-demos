@@ -1,0 +1,3 @@
+INDEX VERSION 1.127+/home/lurodrig/development/workspaces/performance-issues/.metadata/.plugins/org.eclipse.jdt.core
+3161289063.index
+2491931062.index

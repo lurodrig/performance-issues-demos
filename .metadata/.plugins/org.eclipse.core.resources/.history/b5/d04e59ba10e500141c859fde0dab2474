@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Common performance issues demo</title>
+</head>
+<body>
+<ul>
+	<li><a href="SlowRequest?millis=1000">Slow request</a></li>
+	<li><a href="WaitingOnDatabase?millis=10">Waiting on database</a></li>
+	<li><a href="WaitingOnIO?millis=10">Waiting on IO</a></li>
+	<li><a href="LotOfCPU?millis=100">Lot of CPU</a></li>
+	<li><a href="MemoryLeak?millis=1000">Memory leak</a></li>
+</ul>
+</body>
+</html>
