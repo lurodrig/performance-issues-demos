@@ -26,6 +26,7 @@ public class TroubleMakerPropertiesListener implements ServletContextListener {
 	 */
 	public void contextInitialized(ServletContextEvent servletContextEvent) {
 		try {
+			System.out.println("HELLO TROUBLEMAKER!!!");
 			ServletContext servletContext = servletContextEvent
 					.getServletContext();
 			String filePath = servletContext
@@ -35,7 +36,6 @@ public class TroubleMakerPropertiesListener implements ServletContextListener {
 					properties);
 		} catch (IOException e) {
 			e.printStackTrace();
-			throw new RuntimeException(e);
 		}
 	}
 
@@ -43,6 +43,7 @@ public class TroubleMakerPropertiesListener implements ServletContextListener {
 	 * @see ServletContextListener#contextDestroyed(ServletContextEvent)
 	 */
 	public void contextDestroyed(ServletContextEvent servletContextEvent) {
+		System.out.println("GOOD BYE TROUBLEMAKER!!!");
 	}
 
 }

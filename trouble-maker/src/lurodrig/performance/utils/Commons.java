@@ -1,7 +1,10 @@
 package lurodrig.performance.utils;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.Reader;
@@ -19,6 +22,9 @@ import java.util.Properties;
 import javassist.ClassPool;
 
 import javax.servlet.http.HttpServletRequest;
+
+import de.svenjacobs.loremipsum.LoremIpsum;
+import lurodrig.perfomance.examples.WaitingOnIO;
 
 public class Commons {
 
@@ -92,9 +98,24 @@ public class Commons {
 			}
 		}
 	}
-	
-	 public static Class generate(String name) throws Exception {
-         ClassPool pool = ClassPool.getDefault();
-         return pool.makeClass(name).toClass();
-         }
+
+	public static Class generate(String name) throws Exception {
+		ClassPool pool = ClassPool.getDefault();
+		return pool.makeClass(name).toClass();
+	}
+
+	public static void writeAndSleep(String filePath, String sleeper,
+			long millis) throws IOException {
+		LoremIpsum loremIpsum = new LoremIpsum();
+		File file = new File(filePath);
+		BufferedWriter output = new BufferedWriter(new FileWriter(file));
+		for (int i = 0; i < 1000; i++) {
+			String words = loremIpsum.getWords(100);
+			output.write(words);
+			System.out.println(sleeper + " writing " + words.substring(0, 5)
+					+ "...");
+			Commons.sleep(WaitingOnIO.class.getName(), millis);
+		}
+		output.close();
+	}
 }

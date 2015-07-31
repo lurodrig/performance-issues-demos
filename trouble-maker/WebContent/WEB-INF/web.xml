@@ -4,8 +4,7 @@
   <context-param>
     <description>Project main properties file</description>
     <param-name>troubleMakerPropertiesPath</param-name>
-    <!--<param-value>/afs/cern.ch/project/jps/reps/test-j2ee-carl/trouble-maker.properties</param-value>-->
-    <param-value>/home/lurodrig/development/datasources/trouble-maker.properties</param-value>
+    <param-value>/afs/cern.ch/project/jps/reps/test-j2ee-carl/trouble-maker.properties</param-value>
   </context-param>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
